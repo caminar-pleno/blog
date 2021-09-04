@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
+file = URI.open("http://www.ruby-lang.org/en/")
+article = Article.new(title: 'NES', body: "A great console")
+article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
